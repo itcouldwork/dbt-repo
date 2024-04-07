@@ -15,9 +15,3 @@ add_features AS (
 )
 SELECT *
 FROM add_features
-
--- Update NULL values for specific columns
-UPDATE forecast_day_data SET moonrise = NULL WHERE moonrise = 'No moonrise'
-UPDATE forecast_day_data SET moonset = NULL WHERE moonset = 'No moonset'
-UPDATE forecast_day_data SET sunrise = NULL WHERE sunrise = 'No sunrise'
-UPDATE forecast_day_data SET sunset = NULL WHERE sunset = 'No sunset'
