@@ -1,7 +1,7 @@
 WITH forecast_day_data AS (
     SELECT * 
     FROM {{ref('staging_forecast_day')}}
-)
+),
 add_features AS (
     SELECT *,
         ,TO_DATE('date', 'YYYY-MM-DD') AS date,
