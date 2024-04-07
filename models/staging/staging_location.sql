@@ -7,7 +7,7 @@ WITH locations_data AS (
            ,(extracted_data -> 'location' ->> 'lat')::NUMERIC AS lat 
            ,(extracted_data -> 'location' ->> 'lon')::NUMERIC AS lon
            ,(extracted_data -> 'location' ->> 'tz_id') AS timezone_id
---           ,TO_TIMESTAMP((extracted_data -> 'location' ->> 'localtime_epoch')::BIGINT) AS time_epoch
+          ,TO_TIMESTAMP((extracted_data -> 'location' ->> 'localtime_epoch')::BIGINT) AS time_epoch
 --           ,(extracted_data -> 'location' ->> 'localtime')::TIMESTAMP AS time_local
     FROM {{source("staging", "weather_raw")}})
 SELECT * 
