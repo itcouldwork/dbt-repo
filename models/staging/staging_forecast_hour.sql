@@ -14,8 +14,7 @@ forecast_hour_data AS (
             ,region
             ,country		
             ,(hour_data ->> 'time_epoch')::INTEGER AS time_epoch
-            ,(hour_data ->> 'time')::TIMESTAMP AS hour_timestamp
-            ,(hour_data ->> 'time') AS hour_text
+            ,(hour_data ->> 'time')::TIMESTAMP AS date_time
             ,(hour_data ->> 'is_day')::INTEGER AS is_day			
             ,(hour_data -> 'condition' ->> 'text')::VARCHAR(255) AS condition_text
             ,(hour_data -> 'condition' ->> 'icon')::VARCHAR(255) AS condition_icon
