@@ -11,4 +11,4 @@ WITH locations_data AS (
 --           ,(extracted_data -> 'location' ->> 'localtime')::TIMESTAMP AS time_local
     FROM {{source("staging", "weather_raw")}})
 SELECT * 
-FROM locations_data;
+FROM locations_data
